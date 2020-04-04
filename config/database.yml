@@ -9,7 +9,7 @@ development:
   database: social_distance_development
   pool: 5
   username: postgres
-  password:
+  password: rofl21
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

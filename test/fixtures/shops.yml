@@ -1,0 +1,31 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  phone_number: 
+  shop_type: 1
+  address1: MyText
+  address2: MyText
+  city: MyString
+  state: MyString
+  country: MyString
+  zipcode: MyString
+  max_allowed: 1
+  lat: 9.99
+  long: 9.99
+  open: false
+
+two:
+  name: MyString
+  phone_number: 
+  shop_type: 1
+  address1: MyText
+  address2: MyText
+  city: MyString
+  state: MyString
+  country: MyString
+  zipcode: MyString
+  max_allowed: 1
+  lat: 9.99
+  long: 9.99
+  open: false
