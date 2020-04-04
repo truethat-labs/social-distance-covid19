@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_04_04_071927) do
     t.string "country"
     t.string "zipcode"
     t.integer "max_allowed"
-    t.integer "in_store"
+    t.integer "in_store", default: 0
     t.decimal "latitude"
     t.decimal "longitude"
     t.boolean "open", default: false

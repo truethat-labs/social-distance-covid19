@@ -1,7 +1,7 @@
 <%= form_with(model: [current_user, shop], local: true) do |f| %>
 <div class="form-group">
   <%= label_tag(:name, "Shop Name") %>
-  <%= f.text_field :name, class: 'form-control' %>
+  <%= f.text_field :name, required: true, class: 'form-control' %>
 </div>
 <div class="form-group">
   <%= label_tag(:name, "Shop Address 1") %>
@@ -33,7 +33,7 @@
 </div>
 <div class="form-group">
   <%= label_tag(:name, "Maximum number of people allowed in the shop at a time") %>
-  <%= f.number_field :max_allowed, class: 'form-control' %>
+  <%= f.number_field :max_allowed, required: true, class: 'form-control' %>
 </div>
 <div class="form-group">
   <%= label_tag(:name, "Shop Type") %>
