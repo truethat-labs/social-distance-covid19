@@ -2,5 +2,29 @@
   <h4 class="alert-heading">Hello!</h4>
   <p>How may are currently shopping in your store?</p>
 </div>
+<div class="row justify-content-md-center mt-5">
+  <div class="col col-8">
+    <p class="shop-open-text">Is your shop open now?</p>
+  </div>
+  <div class="col col-4">
+    <label class="switch">
+      <input id="shop_open_status_toggle" type="checkbox" <%= @shop.open ? 'checked' : '' %>>
+      <span class="slider round"></span>
+    </label>
+  </div>
+</div>
+<hr />
 
-
+<div class="qty">
+  <i>The below number shows how many are currently shopping in your store</i>
+  <input type="number" class="count" name="qty" value="<%= @shop.in_store || 0 %>" max="<%= @shop.max_allowed %>">
+  <div class="plus-minus-wrapper">
+    <span class="minus bg-dark float-left">-</span>
+    <span class="plus bg-dark float-right">+</span>
+  </div>
+  <div>
+    <i>click on</i><br />
+    <i>+ to increase</i><br />
+    <i>- to decrease</i>
+  </div>
+</div>

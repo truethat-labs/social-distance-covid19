@@ -11,7 +11,7 @@ class CreateShops < ActiveRecord::Migration[6.0]
       t.string :country
       t.string :zipcode
       t.integer :max_allowed
-      t.integer :in_store
+      t.integer :in_store, default: 0
       t.decimal :latitude
       t.decimal :longitude
       t.boolean :open, default: false
