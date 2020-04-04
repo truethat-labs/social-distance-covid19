@@ -2,12 +2,13 @@ class HomeController < ApplicationController
   def index
     results = Geocoder.search(remote_ip)
     if results
-      @shops = Shop.near([results.first.latitude, results.first.longitude], 10)
+      @shops = Shop.near([results.first.latitude, results.first.longitude], 10, order: :distance)
     end
+    @shop = current_user.shops.first if current_user && current_user.shops
   end
 
   def nearby
-    @shops = Shop.near([params[:lat], params[:long]], 10)
+    @shops = Shop.near([params[:lat], params[:long]], 10, order: :distance)
     render layout: false
   end
 end
