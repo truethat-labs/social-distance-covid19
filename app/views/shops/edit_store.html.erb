@@ -1,3 +1,13 @@
+<div>To autofill the details, you can search your shop below</div>
+<div id="locationField">
+  <div class="input-group mb-3">
+    <input id="autocomplete" type="text" class="form-control" aria-describedby="basic-addon1" placeholder="Enter your address to see nearby stores " />
+    <div class="input-group-append" id="getLocation">
+      <span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
+    </div>
+  </div>
+</div>
 
+<hr />
 
 <%= render partial: "form", locals: {shop: @shop} %>
