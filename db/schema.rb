@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(version: 2020_04_04_071927) do
     t.string "country"
     t.string "zipcode"
     t.integer "max_allowed"
-    t.decimal "lat"
-    t.decimal "long"
+    t.decimal "latitude"
+    t.decimal "longitude"
     t.boolean "open", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
