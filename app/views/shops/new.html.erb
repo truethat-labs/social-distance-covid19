@@ -1,4 +1,4 @@
-<%= form_with model: @shop do |f| %>
+<%= form_with scope: @shop, url: user_shops_path do |f| %>
   Form contents
   <p>
     <%= label_tag(:name, "Shop Name") %>
