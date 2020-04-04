@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>SocialDistanceCovid19</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>Social Distance - Covid19</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials.google_maps_api_key %>&libraries=places"></script>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <%= render 'shared/navbar' %>
+  <div id="main">
+    <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+    <% elsif alert %>
+    <p class="alert alert-warning"><%= alert %></p>
+    <% end %>
     <%= yield %>
-  </body>
+  </div>
+</body>
+
 </html>

@@ -1,0 +1,12 @@
+<% @shops.each do |shop| %>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title"><%= shop.name %></h5>
+    <p class="card-text"><%= shop.phone_number %></p>
+    <label class="switch">
+      <input type="checkbox" checked onclick="return false">
+      <span class="slider"></span>
+    </label>
+  </div>
+</div>
+<% end %>
