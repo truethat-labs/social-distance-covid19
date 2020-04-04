@@ -20,4 +20,8 @@
   </div>
 </div>
 
-<div id="nearby_stores"></div>
+<div id="nearby_stores">
+<% if @shops %>
+  <%= render partial: 'shared/nearby' %>
+<% end %>
+</div>

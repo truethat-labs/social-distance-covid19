@@ -36,6 +36,10 @@ function getSelectedLocation() {
   afterGettingLocation(lat, lng);
 }
 
+$(document).ready(function () {
+  $('[data-toggle="popover"]').popover();
+});
+
 $(document).on('click', '#getLocation', function() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (position) {
