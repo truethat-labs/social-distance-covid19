@@ -5,10 +5,9 @@ class ShopsController < ApplicationController
   end
 
   def create
-    @shop = Shop.new(shop_params)
-    @shop.save
+    @shop = current_user.shops.create(shop_params)
 
-    if @shop.save
+    if @shop
       redirect_to root_path
     else
       render 'new'
@@ -16,7 +15,21 @@ class ShopsController < ApplicationController
   end
 
   def show
-    @shop = Shop.find(params[:id])
+    @shop = current_user.shops.find(params[:id])
+  end
+
+  def edit
+    @shop = current_user.shops.find(params[:id])
+  end
+
+  def update
+    @shop = current_user.shops.find(params[:id])
+
+    if @shop.update(shop_params)
+      redirect_to root_path
+    else
+      render 'edit'
+    end
   end
 
   private
@@ -24,4 +37,5 @@ class ShopsController < ApplicationController
     def shop_params
       params.require(:shop).permit(:name, :phone_number, :shop_type, :address1, :address2, :city, :state, :country, :zipcode, :max_allowed, :lat, :long, :open)
     end
+
 end
