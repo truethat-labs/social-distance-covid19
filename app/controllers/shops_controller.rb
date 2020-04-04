@@ -15,15 +15,19 @@ class ShopsController < ApplicationController
   end
 
   def show
-    @shop = current_user.shops.find(params[:id])
+    @shop = Shop.find(params[:id])
   end
 
-  def manage
+  def edit_store
     @shop = current_user.shops.first
   end
 
   def edit
     @shop = current_user.shops.find(params[:id])
+  end
+
+  def manage_store
+    @shop = current_user.shops.first
   end
 
   def update
