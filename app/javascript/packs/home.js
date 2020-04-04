@@ -55,6 +55,8 @@ $(document).on('click', '#getLocation', function() {
   }
 });
 
-function afterGettingLocation() {
-  // hit the api and get the shops
+function afterGettingLocation(lat, long) {
+  $.get("/nearby?lat="+lat+"&long="+long, function (data, status) {
+    document.getElementById('nearby_stores').innerHTML = data;
+  });
 }
