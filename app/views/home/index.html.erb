@@ -6,7 +6,7 @@
     <a class="btn btn-outline-success" href="/edit_store" role="button">Edit your store</a>
   <% else %>
     <h4 class="alert-heading">Hello!</h4>
-    <p>If you are a store, please help customer to maintain social distancing by logging in or registering.</p>
+    <p>If you are a store owner, please help reduce the spread of COVID-19 by helping customers to maintain social distance in your store. Register Now!</p>
     <a class="btn btn-outline-success" href="<%= new_user_session_path %>" role="button">Login</a>
     <a class="btn btn-outline-success" href="<%= new_user_registration_path %>" role="button">Register</a>
   <% end %>
@@ -14,7 +14,7 @@
 
 <div id="locationField">
   <div class="input-group mb-3">
-    <input id="autocomplete" type="text" class="form-control" aria-describedby="basic-addon1" placeholder="Enter your addreess" />
+    <input id="autocomplete" type="text" class="form-control" aria-describedby="basic-addon1" placeholder="Enter your address to see nearby stores " />
     <div class="input-group-append" id="getLocation">
       <span class="input-group-text" id="basic-addon1"><i class="fas fa-map-marker-alt"></i></span>
     </div>
