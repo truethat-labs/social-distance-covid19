@@ -1,0 +1,44 @@
+<%= form_with model: @shop do |f| %>
+  Form contents
+  <p>
+    <%= label_tag(:name, "Shop Name") %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= label_tag(:name, "Shop Address 1") %>
+    <%= f.text_field :address1 %>
+  </p>
+  <p>
+    <%= label_tag(:name, "Shop Address 2") %>
+    <%= f.text_field :address2 %>
+  </p>
+  <p>
+    <%= label_tag(:name, "Shop City") %>
+    <%= f.text_field :city %>
+  </p>
+  <p>
+    <%= label_tag(:name, "Shop State") %>
+    <%= f.text_field :state %>
+  </p>
+  <p>
+    <%= label_tag(:name, "Shop Country") %>
+    <%= f.text_field :country %>
+  </p>
+  <p>
+    <%= label_tag(:name, "Shop zipcode") %>
+    <%= f.number_field :zipcode %>
+  </p>
+  <p>
+    <%= label_tag(:name, "Maximum number of people allowed in the shop at a time") %>
+    <%= f.number_field :max_allowed %>
+  </p>
+  <p>
+    <%= label_tag(:name, "Shop Phone Number") %>
+    <%= f.number_field :phone_number %>
+  </p>
+  <p>
+    <%= label_tag(:name, "Shop Type") %>
+    <%= f.select :shop_type, [ 'Grocery', 'Medicine', 'Other' ] %>
+  </p>
+  <p><%= f.submit "Create" %></p>
+<% end %>
