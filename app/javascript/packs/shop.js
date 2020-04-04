@@ -10,11 +10,14 @@ $(document).ready(function () {
   });
   $(document).on('click', '.minus', function () {
     $('.count').val(parseInt($('.count').val()) - 1);
+    if ($('.count').val() != -1) {
+      var count = $('.count').val();
+      updateCounter(count)
+    }
+
     if ($('.count').val() == -1) {
       $('.count').val(0);
     }
-    var count = $('.count').val();
-    updateCounter(count)
   });
 
   $(document).on('change', '#shop_open_status_toggle', function () {
