@@ -1,11 +1,11 @@
 <%= form_with(model: [current_user, shop], local: true) do |f| %>
 <div class="form-group">
   <%= label_tag(:name, "Shop Name") %>
-  <%= f.text_field :name, class: 'form-control' %>
+  <%= f.text_field :name, required: true, class: 'form-control' %>
 </div>
 <div class="form-group">
   <%= label_tag(:name, "Shop Address 1") %>
-  <%= f.text_field :address1, class: 'form-control' %>
+  <%= f.text_field :address1, required: true, class: 'form-control' %>
 </div>
 <div class="form-group">
   <%= label_tag(:name, "Shop Address 2") %>
@@ -13,39 +13,38 @@
 </div>
 <div class="form-group">
   <%= label_tag(:name, "Shop City") %>
-  <%= f.text_field :city, class: 'form-control', id: 'locality' %>
-</div>
-<div class="form-group">
-  <%= label_tag(:name, "Shop State") %>
-  <%= f.text_field :state, class: 'form-control', id: 'administrative_area_level_1' %>
-</div>
-<div class="form-group">
-  <%= label_tag(:name, "Shop Country") %>
-  <%= f.text_field :country, class: 'form-control', id: 'country' %>
-</div>
-<div class="form-group">
-  <%= label_tag(:name, "Shop zipcode") %>
-  <%= f.number_field :zipcode, class: 'form-control', id: 'postal_code' %>
-</div>
-<div class="form-group">
-  <%= label_tag(:name, "Shop Phone Number") %>
-  <%= f.number_field :phone_number, class: 'form-control' %>
-</div>
-<div class="form-group">
-  <%= label_tag(:name, "Maximum number of people allowed in the shop at a time") %>
-  <%= f.number_field :max_allowed, class: 'form-control' %>
-</div>
-<div class="form-group">
-  <%= label_tag(:name, "Shop Type") %>
-  <%= f.select :shop_type, [ 'Grocery', 'Medicine', 'Other' ], {}, { class: 'form-control' } %>
-</div>
-<div class="form-group">
-  <%= label_tag(:name, "Latitude") %>
-  <%= f.number_field :latitude, class: 'form-control', step: :any %>
-</div>
-<div class="form-group">
-  <%= label_tag(:name, "Longitude") %>
-  <%= f.number_field :longitude, class: 'form-control', step: :any %>
-</div>
-<%= f.submit "Submit", class: 'btn btn-primary btn-block' %>
-<% end %>
+  <%= f.text_field :city, required: true, class: 'form-control', id: 'locality' %> </div>
+    <div class="form-group">
+      <%= label_tag(:name, "Shop State") %>
+      <%= f.text_field :state, required: true, class: 'form-control', id: 'administrative_area_level_1' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:name, "Shop Country") %>
+      <%= f.text_field :country, required: true, class: 'form-control', id: 'country' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:name, "Shop zipcode") %>
+      <%= f.number_field :zipcode, required: true, class: 'form-control', id: 'postal_code' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:name, "Shop Phone Number") %>
+      <%= f.number_field :phone_number, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:name, "Maximum number of people allowed in the shop at a time") %>
+      <%= f.number_field :max_allowed, required: true, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:name, "Shop Type") %>
+      <%= f.select :shop_type, [ 'Grocery', 'Medicine', 'Other' ], {}, { class: 'form-control' } %>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:name, "Latitude") %>
+      <%= f.number_field :latitude, class: 'form-control', step: :any %>
+    </div>
+    <div class="form-group">
+      <%= label_tag(:name, "Longitude") %>
+      <%= f.number_field :longitude, class: 'form-control', step: :any %>
+    </div>
+    <%= f.submit "Submit", class: 'btn btn-primary btn-block' %>
+    <% end %>
