@@ -1,14 +1,14 @@
 <div class="alert alert-success" role="alert">
   <% if user_signed_in? %>
-    <h4 class="alert-heading">Hello <u><%= @shop.try(:name) %></u>!</h4>
-    <p>You are a star, you are really helping the world to maintain social distancing</p>
-    <a class="btn btn-outline-success" href="/manage_store" role="button">Manage your store</a>
-    <a class="btn btn-outline-success" href="/edit_store" role="button">Edit your store</a>
+  <h4 class="alert-heading">Hello <u><%= @shop.try(:name) %></u>!</h4>
+  <p>You are a star, you are really helping the world to maintain social distancing</p>
+  <a class="btn btn-outline-success" href="/manage_store" role="button">Manage your store</a>
+  <a class="btn btn-outline-success" href="/edit_store" role="button">Edit your store</a>
   <% else %>
-    <h4 class="alert-heading">Hello!</h4>
-    <p>If you are a store owner, please help reduce the spread of COVID-19 by helping customers to maintain social distance in your store. Register Now!</p>
-    <a class="btn btn-outline-success" href="<%= new_user_session_path %>" role="button">Login</a>
-    <a class="btn btn-outline-success" href="<%= new_user_registration_path %>" role="button">Register</a>
+  <h4 class="alert-heading">Hello!</h4>
+  <p>If you are a store owner, please help reduce the spread of COVID-19 by helping customers to maintain social distance in your store. Register Now!</p>
+  <a class="btn btn-outline-success" href="<%= new_user_session_path %>" role="button">Login</a>
+  <a class="btn btn-outline-success" href="<%= new_user_registration_path %>" role="button">Register</a>
   <% end %>
 </div>
 
@@ -26,3 +26,6 @@
   <%= render partial: 'shared/nearby' %>
   <% end %>
 </div>
+
+<div id="map"></div>
+<input id="location" type="hidden" value="<%= @location.to_json %>">

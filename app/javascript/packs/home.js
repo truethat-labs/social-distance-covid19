@@ -67,6 +67,15 @@ function getPlaceData() {
   }
 }
 
+$(window).on('load', function () {
+  if (document.getElementById('nearby_stores')) {
+    var nearby = document.getElementById('nearby_stores');
+    if (nearby.innerHTML.length < 10) {
+      whenNone();
+    }
+  }
+});
+
 $(document).on('click', '#getLocation', function() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -89,7 +98,57 @@ $(document).on('click', '#getLocation', function() {
 function afterGettingLocation(lat, long) {
   if(document.getElementById('nearby_stores')) {
     $.get("/nearby?lat="+lat+"&long="+long, function (data, status) {
-      document.getElementById('nearby_stores').innerHTML = data;
+      if (data.length < 10) {
+        $('#location').val(JSON.stringify({
+          lat: lat,
+          lng: long
+        }));
+        whenNone();
+      } else {
+        document.getElementById('nearby_stores').innerHTML = data;
+      }
     });
+  }
+}
+
+function whenNone() {
+  var location = JSON.parse($('#location').val());
+  var pyrmont = new google.maps.LatLng(location.lat, location.lng);
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: pyrmont,
+    zoom: 15
+  });
+
+  var request = {
+    location: pyrmont,
+    radius: '500',
+    types: ['grocery_or_supermarket']
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
+}
+
+function callback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    var data = [];
+    for (var i = 0; i < results.length; i++) {
+      console.log(results[i]);
+      var card = `<div class="card">
+                    <div class="card-body">
+                      <h5 class="card-title">${results[i].name}</h5>
+                      <p class="shop_status" style="font-size: 14px;">
+                        <span class="text-danger">Unregistered</span>
+                      </p>
+                      <p><i>${results[i].vicinity}</i></p>
+                      <div>
+                        <a href="https://www.google.com/maps/place/?q=place_id:${results[i].place_id}" target="_blank" class="btn btn-outline-primary">Open in maps</a>
+                      </div>
+                    </div>
+                  </div>`;
+      data.push(card);
+    }
+    document.getElementById('nearby_stores').innerHTML = data.join('');
   }
 }

@@ -2,6 +2,10 @@ class HomeController < ApplicationController
   def index
     results = Geocoder.search(remote_ip)
     if results
+      @location = {
+        lat: results.first.latitude,
+        lng: results.first.longitude
+      }
       @shops = Shop.near([results.first.latitude, results.first.longitude], 10, order: :distance)
     end
     @shop = current_user.shops.first if current_user && current_user.shops
