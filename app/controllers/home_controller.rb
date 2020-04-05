@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
   def index
     results = Geocoder.search(remote_ip)
-    if results
+    if results.size > 0
       lat = results.first.latitude
       long = results.first.longitude
 
