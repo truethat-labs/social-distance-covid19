@@ -5,11 +5,11 @@ In this stressful time, waiting at a grocery store for your essential needs is n
 Store Owners
 ------------
 
-NearByOpen allows a store owner to maintain social distancing at their shop by updating the number of people at the store at a particular time.
+[NearByOpen](https://nearbystore.com) allows a store owner to maintain social distancing at their shop by updating the number of people at the store at a particular time.
 
 Customers
 ---------
-**NearByOpen** for COVID-19 helps a customer to see the nearby stores, how many people are allowed at the store and the number of people currently at the store.
+[NearByOpen](https://nearbystore.com) for COVID-19 helps a customer to see the nearby stores, how many people are allowed at the store and the number of people currently at the store.
 
 
 Contributing
