@@ -112,22 +112,23 @@ function afterGettingLocation(lat, long) {
 }
 
 function whenNone() {
-  var location = JSON.parse($('#location').val());
-  var pyrmont = new google.maps.LatLng(location.lat, location.lng);
+  // var location = JSON.parse($('#location').val());
+  // var pyrmont = new google.maps.LatLng(location.lat, location.lng);
 
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: pyrmont,
-    zoom: 15
-  });
+  // map = new google.maps.Map(document.getElementById('map'), {
+  //   center: pyrmont,
+  //   zoom: 15
+  // });
 
-  var request = {
-    location: pyrmont,
-    radius: '500',
-    types: ['grocery_or_supermarket']
-  };
+  // var request = {
+  //   location: pyrmont,
+  //   radius: 500,
+  //   rankby: 'distance',
+  //   types: ['grocery_or_supermarket']
+  // };
 
-  service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(request, callback);
+  // service = new google.maps.places.PlacesService(map);
+  // service.nearbySearch(request, callback);
 }
 
 function callback(results, status) {
