@@ -2,14 +2,21 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title"><%= shop.name %></h5>
-    <p class="card-text">Phone: <%= shop.phone_number %></p>
+    <p class="card-text"><b>Phone:</b> <%= shop.phone_number %></p>
     <p class="shop_status">
       <% if shop.open %>
-      <span class="text-success" onclick="alert('Shop allows only <%= shop.max_allowed %> members max, <%= shop.in_store %> are already in store')">(<%= shop.in_store %>/<%= shop.max_allowed %>)</span>
+        <span class="text-success" onclick="alert('Store allows only <%= shop.max_allowed %> members max at a time, <%= shop.in_store %> are already in store')">(<%= shop.in_store %>/<%= shop.max_allowed %>)
+        </span>
       <% else %>
-      <span class="text-danger">Closed</span>
+        <span class="text-danger">Closed</span>
       <% end %>
     </p>
+    <p class="shop_status_open">
+      <% if shop.open %>
+        <span class="text-success">Open</span>
+      <% end %>
+    </p>
+    <p class="card-text"><b>Address:</b> <%= "#{shop.address1}," +  " #{shop.address2}," + " #{shop.city}" %></p>
   </div>
 </div>
 <% end %>
