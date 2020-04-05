@@ -7,15 +7,15 @@ In this stressful time, waiting at a grocery store for your essential needs is n
 Store Owners
 ------------
 
-[NearByOpen](https://nearbystore.com) allows a store owner to maintain social distancing at their shop by updating the number of people at the store at a particular time.
+[NearByOpen](https://nearbyopen.com) allows a store owner to maintain social distancing at their shop by updating the number of people at the store at a particular time.
 
 Customers
 ---------
-[NearByOpen](https://nearbystore.com) for COVID-19 helps a customer to see the nearby stores, how many people are allowed at the store and the number of people currently at the store.
+[NearByOpen](https://nearbyopen.com) for COVID-19 helps a customer to see the nearby stores, how many people are allowed at the store and the number of people currently at the store.
 
 How it helps?
 -------------
-[NearByOpen - Covid19](https://raw.githubusercontent.com/truethat-labs/social-distance-covid19/master/public/demo.gif)
+![NearByOpen - Covid19](https://raw.githubusercontent.com/truethat-labs/social-distance-covid19/master/public/demo.gif)
 
 Contributing
 ------------
