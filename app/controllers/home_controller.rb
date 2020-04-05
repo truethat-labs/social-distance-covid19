@@ -16,6 +16,9 @@ class HomeController < ApplicationController
 
   def nearby
     @shops = Shop.near([params[:lat], params[:long]], 10, order: :distance)
+    if @shops.blank?
+      @nearby_stores_list = fetch_nearby_places(params[:lat], params[:long])
+    end
     render layout: false
   end
 
