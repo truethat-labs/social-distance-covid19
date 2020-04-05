@@ -1,6 +1,6 @@
 Check out the product on - https://nearbystore.com 
 
-n this stressful time, waiting at a grocery store for your essential needs is not what a person looks for. Neither do store owners want a large number of people gathering at their store. To solve this issue we came up with this idea yesterday and thought that it could help both customer and store owners to practice social distancing and still buy/sell essential items.
+In this stressful time, waiting at a grocery store for your essential needs is not what a person looks for. Neither do store owners want a large number of people gathering at their store. To solve this issue we came up with this idea yesterday and thought that it could help both customer and store owners to practice social distancing and still buy/sell essential items.
 
 Store Owners
 ------------
