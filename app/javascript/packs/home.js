@@ -134,6 +134,7 @@ function whenNone() {
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     var data = [];
+    console.log(results);
     for (var i = 0; i < results.length; i++) {
       console.log(results[i]);
       var card = `<div class="card">

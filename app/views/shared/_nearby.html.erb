@@ -2,7 +2,9 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title"><%= shop.name %></h5>
-    <p class="card-text">Phone: <%= shop.phone_number %></p>
+    <% if shop.phone_number %>
+      <p class="card-text">Phone: +<%= number_to_phone(shop.phone_number) %></p>
+    <% end %>
     <p class="shop_status">
       <% if shop.open %>
       <span class="text-success" onclick="alert('Shop allows only <%= shop.max_allowed %> members max, <%= shop.in_store %> are already in store')">(<%= shop.in_store %>/<%= shop.max_allowed %>)</span>
