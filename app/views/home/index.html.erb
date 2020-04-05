@@ -27,8 +27,10 @@
 </div>
 
 <div id="nearby_stores">
-  <% if @shops %>
-  <%= render partial: 'shared/nearby' %>
+  <% if @shops.present? %>
+    <%= render partial: 'shared/nearby' %>
+  <% else %>
+    <%= render partial: 'shared/nearby_empty' %>
   <% end %>
 </div>
 
